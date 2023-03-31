@@ -1,0 +1,515 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7vx485tffg1157-1",
+      "gen_directory": "../../../../motor_project.gen/sources_1/bd/motorproject_top",
+      "name": "motorproject_top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "analysis_0": "",
+      "debounce_0": "",
+      "clockdivider_0": "",
+      "switchdisplay_0": "",
+      "glue_logic_0": "",
+      "mux3x8_0": "",
+      "display_0": "",
+      "xlconcat_0": "",
+      "xlslice_0": "",
+      "xlslice_1": ""
+    },
+    "ports": {
+      "sseg": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "sseg_an": {
+        "direction": "O",
+        "left": "2",
+        "right": "0"
+      },
+      "led_time": {
+        "direction": "O"
+      },
+      "led_distance": {
+        "direction": "O"
+      },
+      "led_velocity": {
+        "direction": "O"
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "inp": {
+        "direction": "I"
+      },
+      "reset": {
+        "direction": "I"
+      },
+      "lb0": {
+        "direction": "I"
+      },
+      "lb1": {
+        "direction": "I"
+      },
+      "led_left": {
+        "direction": "O"
+      },
+      "led_right": {
+        "direction": "O"
+      },
+      "led_pulse": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "analysis_0": {
+        "vlnv": "xilinx.com:module_ref:analysis:1.0",
+        "xci_name": "motorproject_top_analysis_0_0",
+        "xci_path": "ip\\motorproject_top_analysis_0_0\\motorproject_top_analysis_0_0.xci",
+        "inst_hier_path": "analysis_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "analysis",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "lb": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "dir_left": {
+            "direction": "O"
+          },
+          "dir_right": {
+            "direction": "O"
+          },
+          "pulse": {
+            "direction": "O"
+          },
+          "time": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "distance": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "velocity": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "debounce_0": {
+        "vlnv": "xilinx.com:module_ref:debounce:1.0",
+        "xci_name": "motorproject_top_debounce_0_0",
+        "xci_path": "ip\\motorproject_top_debounce_0_0\\motorproject_top_debounce_0_0.xci",
+        "inst_hier_path": "debounce_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debounce",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "inp": {
+            "direction": "I"
+          },
+          "oup": {
+            "direction": "O"
+          }
+        }
+      },
+      "clockdivider_0": {
+        "vlnv": "xilinx.com:module_ref:clockdivider:1.0",
+        "xci_name": "motorproject_top_clockdivider_0_0",
+        "xci_path": "ip\\motorproject_top_clockdivider_0_0\\motorproject_top_clockdivider_0_0.xci",
+        "inst_hier_path": "clockdivider_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clockdivider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clkslow": {
+            "direction": "O"
+          }
+        }
+      },
+      "switchdisplay_0": {
+        "vlnv": "xilinx.com:module_ref:switchdisplay:1.0",
+        "xci_name": "motorproject_top_switchdisplay_0_0",
+        "xci_path": "ip\\motorproject_top_switchdisplay_0_0\\motorproject_top_switchdisplay_0_0.xci",
+        "inst_hier_path": "switchdisplay_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "switchdisplay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "button": {
+            "direction": "I"
+          },
+          "sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "glue_logic_0": {
+        "vlnv": "xilinx.com:module_ref:glue_logic:1.0",
+        "xci_name": "motorproject_top_glue_logic_0_0",
+        "xci_path": "ip\\motorproject_top_glue_logic_0_0\\motorproject_top_glue_logic_0_0.xci",
+        "inst_hier_path": "glue_logic_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "glue_logic",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in0": {
+            "direction": "I"
+          },
+          "in1": {
+            "direction": "I"
+          },
+          "led_time": {
+            "direction": "O"
+          },
+          "led_distance": {
+            "direction": "O"
+          },
+          "led_velocity": {
+            "direction": "O"
+          }
+        }
+      },
+      "mux3x8_0": {
+        "vlnv": "xilinx.com:module_ref:mux3x8:1.0",
+        "xci_name": "motorproject_top_mux3x8_0_0",
+        "xci_path": "ip\\motorproject_top_mux3x8_0_0\\motorproject_top_mux3x8_0_0.xci",
+        "inst_hier_path": "mux3x8_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mux3x8",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "inp0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "inp1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "inp2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "oup": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "display_0": {
+        "vlnv": "xilinx.com:module_ref:display:1.0",
+        "xci_name": "motorproject_top_display_0_0",
+        "xci_path": "ip\\motorproject_top_display_0_0\\motorproject_top_display_0_0.xci",
+        "inst_hier_path": "display_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "display",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "inp": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sseg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "sseg_an": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "motorproject_top_xlconcat_0_0",
+        "xci_path": "ip\\motorproject_top_xlconcat_0_0\\motorproject_top_xlconcat_0_0.xci",
+        "inst_hier_path": "xlconcat_0"
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "motorproject_top_xlslice_0_0",
+        "xci_path": "ip\\motorproject_top_xlslice_0_0\\motorproject_top_xlslice_0_0.xci",
+        "inst_hier_path": "xlslice_0",
+        "parameters": {
+          "DIN_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "motorproject_top_xlslice_0_1",
+        "xci_path": "ip\\motorproject_top_xlslice_0_1\\motorproject_top_xlslice_0_1.xci",
+        "inst_hier_path": "xlslice_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "2"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "clockdivider_0/clkslow",
+          "analysis_0/clk",
+          "debounce_0/clk",
+          "switchdisplay_0/clk",
+          "display_0/clk"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "reset",
+          "analysis_0/reset",
+          "debounce_0/reset",
+          "switchdisplay_0/reset",
+          "display_0/reset"
+        ]
+      },
+      "analysis_0_dir_left": {
+        "ports": [
+          "analysis_0/dir_left",
+          "led_left"
+        ]
+      },
+      "analysis_0_dir_right": {
+        "ports": [
+          "analysis_0/dir_right",
+          "led_right"
+        ]
+      },
+      "analysis_0_distance": {
+        "ports": [
+          "analysis_0/distance",
+          "mux3x8_0/inp1"
+        ]
+      },
+      "analysis_0_pulse": {
+        "ports": [
+          "analysis_0/pulse",
+          "led_pulse"
+        ]
+      },
+      "analysis_0_time": {
+        "ports": [
+          "analysis_0/time",
+          "mux3x8_0/inp0"
+        ]
+      },
+      "analysis_0_velocity": {
+        "ports": [
+          "analysis_0/velocity",
+          "mux3x8_0/inp2"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "clockdivider_0/clk"
+        ]
+      },
+      "debounce_0_oup": {
+        "ports": [
+          "debounce_0/oup",
+          "switchdisplay_0/button"
+        ]
+      },
+      "display_0_sseg": {
+        "ports": [
+          "display_0/sseg",
+          "sseg"
+        ]
+      },
+      "display_0_sseg_an": {
+        "ports": [
+          "display_0/sseg_an",
+          "sseg_an"
+        ]
+      },
+      "glue_logic_0_led_distance": {
+        "ports": [
+          "glue_logic_0/led_distance",
+          "led_distance"
+        ]
+      },
+      "glue_logic_0_led_time": {
+        "ports": [
+          "glue_logic_0/led_time",
+          "led_time"
+        ]
+      },
+      "glue_logic_0_led_velocity": {
+        "ports": [
+          "glue_logic_0/led_velocity",
+          "led_velocity"
+        ]
+      },
+      "inp_1": {
+        "ports": [
+          "inp",
+          "debounce_0/inp"
+        ]
+      },
+      "lb0_1": {
+        "ports": [
+          "lb0",
+          "xlconcat_0/In0"
+        ]
+      },
+      "lb1_1": {
+        "ports": [
+          "lb1",
+          "xlconcat_0/In1"
+        ]
+      },
+      "mux3x8_0_oup": {
+        "ports": [
+          "mux3x8_0/oup",
+          "display_0/inp"
+        ]
+      },
+      "switchdisplay_0_sel": {
+        "ports": [
+          "switchdisplay_0/sel",
+          "mux3x8_0/sel",
+          "xlslice_0/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "analysis_0/lb"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "glue_logic_0/in0"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "glue_logic_0/in1"
+        ]
+      }
+    }
+  }
+}
